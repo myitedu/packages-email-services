@@ -1,0 +1,21 @@
+{
+    "name": "myitedu/email-services",
+    "description": "A package for handling email services.",
+    "type": "library",
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Myitedu\\EmailServices\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Myitedu\\EmailServices\\EmailServicesServiceProvider"
+            ]
+        }
+    }
+
+}
