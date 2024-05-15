@@ -11,17 +11,24 @@ class EmailServicesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Publish configuration files
         $this->publishes([
             __DIR__.'/../config/emailservices.php' => config_path('emailservices.php'),
         ], 'config');
 
+        // Publish migration files
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations')
+        ], 'migrations');
+
         // Load views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'emailservices');
 
-        // If you have routes, uncomment the next line
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        // Load routes if necessary
+        if (file_exists(__DIR__.'/../routes/web.php')) {
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        }
     }
-
 
     /**
      * Register the application services.
