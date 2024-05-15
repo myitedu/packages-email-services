@@ -1,5 +1,5 @@
 <?php
-namespace Myitedu\EmailServices\Test;
+namespace Myitedu\EmailServices\Console;
 
 use Illuminate\Console\Command;
 
