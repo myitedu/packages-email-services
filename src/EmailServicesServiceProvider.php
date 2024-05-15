@@ -28,7 +28,15 @@ class EmailServicesServiceProvider extends ServiceProvider
         if (file_exists(__DIR__.'/../routes/web.php')) {
             $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         }
+
+        // Registering console commands
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                \Myitedu\EmailServices\Console\EmailServicesInstallCommand::class,
+            ]);
+        }
     }
+
 
     /**
      * Register the application services.
