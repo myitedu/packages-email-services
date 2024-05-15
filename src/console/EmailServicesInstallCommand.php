@@ -43,7 +43,7 @@ class EmailServicesInstallCommand extends Command
                 '--provider' => "Myitedu\\EmailServices\\EmailServicesServiceProvider",
                 '--tag' => 'config'
             ]);
-            $this->info('Configuration published successfully.');
+            $this->info('Configuration published successfully!');
         } catch (\Exception $e) {
             $this->error('Failed to publish configuration: ' . $e->getMessage());
         }
@@ -54,7 +54,7 @@ class EmailServicesInstallCommand extends Command
                 '--provider' => "Myitedu\\EmailServices\\EmailServicesServiceProvider",
                 '--tag' => 'migrations'
             ]);
-            $this->info('Migrations published successfully.');
+            $this->info('Migrations published successfully!');
         } catch (\Exception $e) {
             $this->error('Failed to publish migrations: ' . $e->getMessage());
         }
@@ -62,13 +62,13 @@ class EmailServicesInstallCommand extends Command
         if ($this->confirm('Do you want to run the migrations now?', true)) {
             try {
                 $this->call('migrate');
-                $this->info('Migrations run successfully.');
+                $this->info('Migrations run successfully!');
             } catch (\Exception $e) {
                 $this->error('Failed to run migrations: ' . $e->getMessage());
             }
         }
 
-        $this->info('Email Services package installed successfully.');
+        $this->info('Email Services package installed successfully!');
     }
 
 }
