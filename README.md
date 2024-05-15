@@ -25,3 +25,18 @@ Run the following command in your project directory to add the Email-Services pa
 
 ```bash
 composer require myitedu/email-services
+```
+## Post-Installation Script
+
+To automate the setup process after installing or updating the `myitedu/email-services` package, add the following scripts to your project's `composer.json`:
+
+```json
+"scripts": {
+    "post-update-cmd": [
+        "@php artisan vendor:publish --provider=\"Myitedu\\EmailServices\\EmailServicesServiceProvider\" --tag=config --force"
+    ],
+    "post-install-cmd": [
+        "@php artisan vendor:publish --provider=\"Myitedu\\EmailServices\\EmailServicesServiceProvider\" --tag=config --force"
+    ]
+}
+```

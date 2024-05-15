@@ -16,6 +16,9 @@
                 "Myitedu\\EmailServices\\EmailServicesServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-package-install": "Myitedu\\EmailServices\\Scripts@postInstall",
+        "post-package-update": "Myitedu\\EmailServices\\Scripts@postUpdate"
     }
-
 }
