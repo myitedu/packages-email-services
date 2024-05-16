@@ -19,7 +19,11 @@
     },
 
     "scripts": {
-        "post-package-install": "Myitedu\\EmailServices\\Scripts@postInstall",
-        "post-package-update": "Myitedu\\EmailServices\\Scripts@postUpdate"
+        "post-update-cmd": [
+            "@php artisan emailservices:install"
+        ],
+        "post-install-cmd": [
+            "@php artisan emailservices:install"
+        ]
     }
 }
