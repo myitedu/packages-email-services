@@ -32,7 +32,7 @@ class EmailServicesServiceProvider extends ServiceProvider
         // Registering console commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Myitedu\EmailServices\Test\Test::class,
+                \Myitedu\EmailServices\Console\EmailServicesInstallCommand::class,
             ]);
         }
     }
