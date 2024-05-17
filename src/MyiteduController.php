@@ -10,10 +10,18 @@ class MyiteduController extends Controller
         return view("emailservices::testform");
     }
     public function formdata(Request $request){
-        $records = FormData::select('uuid', DB::raw('MAX(id) as id'),'form_id','field_name','field_value','email_sent','created_at')
-            ->groupBy('uuid')
-            ->orderBy('id', 'desc')
+        // Subquery to get the max id for each uuid group
+        $subquery = FormData::select(DB::raw('MAX(id) as id'))
+            ->groupBy('uuid');
+
+        // Join the subquery to get the full records
+        $records = FormData::select('form_data.*')
+            ->joinSub($subquery, 'sub', function ($join) {
+                $join->on('form_data.id', '=', 'sub.id');
+            })
+            ->orderBy('uuid', 'desc')
             ->paginate(20);
+
         return view("emailservices::formdata", compact('records'));
     }
 }
