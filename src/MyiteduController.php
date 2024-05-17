@@ -2,6 +2,7 @@
 namespace Myitedu\EmailServices;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MyiteduController extends Controller
 {
