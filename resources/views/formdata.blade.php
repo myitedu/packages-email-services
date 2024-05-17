@@ -10,8 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Test form Blade!</h1>
-<hr>
+<div class="container">
+    <h3>Form Data records</h3>
+    <hr>
+    <table class="table table-bordered">
+        <tr>
+            <th>UUID</th>
+            <th>Form ID</th>
+            <th>Field Name</th>
+            <th>Field Value</th>
+            <th>Email Sent</th>
+        </tr>
+
+        <tr>
+            <td>UUID</td>
+            <td>Form ID</td>
+            <td>Field Name</td>
+            <td>Field Value</td>
+            <td>Email Sent</td>
+        </tr>
+
+    </table>
+</div>
 
 </body>
 </html>
