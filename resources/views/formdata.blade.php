@@ -6,8 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MYITEDU Email Services Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -15,21 +18,23 @@
     <hr>
     <table class="table table-bordered">
         <tr>
+            <th>ID</th>
             <th>UUID</th>
             <th>Form ID</th>
             <th>Field Name</th>
             <th>Field Value</th>
             <th>Email Sent</th>
         </tr>
-
-        <tr>
-            <td>UUID</td>
-            <td>Form ID</td>
-            <td>Field Name</td>
-            <td>Field Value</td>
-            <td>Email Sent</td>
-        </tr>
-
+        @foreach($records as $record)
+            <tr>
+                <td>{{$record->id}}</td>
+                <td>{{$record->uuid}}</td>
+                <td>{{$record->form_id}}</td>
+                <td>{{$record->field_name}}</td>
+                <td>{{$record->field_value}}</td>
+                <td>{{$record->email_sent}}</td>
+            </tr>
+        @endforeach
     </table>
 </div>
 
