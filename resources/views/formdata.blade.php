@@ -36,6 +36,7 @@
             </tr>
         @endforeach
     </table>
+    @include('emailservices::pagination', ['pagination_object' => $records])
 </div>
 
 </body>

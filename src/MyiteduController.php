@@ -19,7 +19,7 @@ class MyiteduController extends Controller
             ->joinSub($subquery, 'sub', function ($join) {
                 $join->on('form_data.id', '=', 'sub.id');
             })
-            ->orderBy('uuid', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(20);
 
         return view("emailservices::formdata", compact('records'));
