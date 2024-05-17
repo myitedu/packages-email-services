@@ -10,9 +10,9 @@ class MyiteduController extends Controller
         return view("emailservices::testform");
     }
     public function formdata(Request $request){
-        $records = FormData::select('uuid', DB::raw('MAX(id) as id'))
+        $records = FormData::select('uuid', DB::raw('MAX(id) as id'),'form_id','field_name','field_value','email_sent','created_at')
             ->groupBy('uuid')
-            ->orderBy('uuid', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(20);
         return view("emailservices::formdata", compact('records'));
     }
