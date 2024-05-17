@@ -11,7 +11,7 @@ class MyiteduController extends Controller
     }
     public function formdata(Request $request){
         $records = FormData::orderBy('uuid', 'desc')
-            ->paginate(20);
+            ->paginate(100);
 
         return view("emailservices::formdata", compact('records'));
     }
